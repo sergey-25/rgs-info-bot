@@ -1,7 +1,10 @@
 const TelegramBot = require('node-telegram-bot-api');
 const express = require('express');
 const bodyParser = require('body-parser');
-
+const { config } = require('dotenv');
+config();
+const token = process.env.TELEGRAM_TOKEN;
+console.log(token)
 const app = express();
 const bot = new TelegramBot('7070208086:AAGBxEaLA3NqaFwDanU0BfLHmy1geyOSEMw', { polling: true });
 const commands = [
