@@ -6,7 +6,7 @@ config();
 const token = process.env.TELEGRAM_TOKEN;
 console.log(token)
 const app = express();
-const bot = new TelegramBot('7070208086:AAGBxEaLA3NqaFwDanU0BfLHmy1geyOSEMw', { polling: true });
+const bot = new TelegramBot(TELEGRAM_TOKEN, { polling: true });
 const commands = [
     { command: "start", description: "Запуск бота" },
     { command: "menu", description: "Меню" },
