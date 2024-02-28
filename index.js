@@ -4,9 +4,9 @@ const bodyParser = require('body-parser');
 const { config } = require('dotenv');
 config();
 const token = process.env.TELEGRAM_TOKEN;
-console.log(token)
+
 const app = express();
-const bot = new TelegramBot(TELEGRAM_TOKEN, { polling: true });
+const bot = new TelegramBot(token, { polling: true });
 const commands = [
     { command: "start", description: "Запуск бота" },
     { command: "menu", description: "Меню" },
@@ -222,6 +222,11 @@ app.post('/webhook', (req, res) => {
 
 app.listen(5500, () => {
   console.log('Server is running on port 5500');
+});
+
+const port = process.env.PORT || 3003; // Use the provided PORT or default to 3000
+app.listen(port, () => {
+    console.log(`Server is running on port ${port}`);
 });
 
 const webhookUrl = 'https://rgs-telegram-bot-b27a5d9c9991.herokuapp.com/webhook'; // Update with your deployed bot's URL
