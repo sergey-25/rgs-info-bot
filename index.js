@@ -220,3 +220,6 @@ app.post('/webhook', (req, res) => {
 app.listen(5500, () => {
   console.log('Server is running on port 5500');
 });
+
+const webhookUrl = 'https://rgs-telegram-bot-b27a5d9c9991.herokuapp.com/webhook'; // Update with your deployed bot's URL
+bot.setWebHook(`${webhookUrl}/bot${token}`);
